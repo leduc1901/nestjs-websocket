@@ -1,4 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 class Message {
@@ -7,6 +12,9 @@ class Message {
 
   @Column()
   public content: string;
+
+  @CreateDateColumn()
+  createdAt: Date;
 }
 
 export default Message;
